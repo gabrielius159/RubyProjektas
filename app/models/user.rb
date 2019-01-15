@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :articles
+
+  before_save { self.email = email.downcase }
+  # before_save, padarys kad prieš įkeliant į db, email bus mažosiomis raidėmis
+
   validates :username,
             presence: true,
             uniqueness: { case_sensitive: false },
