@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'signup', to: 'users#new'
-  resource :users, except: [:new]
+  resources :users, except: [:new]
 
   # POST, DELETE, SELECT, PUT, UPDATE ir etc. articles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
