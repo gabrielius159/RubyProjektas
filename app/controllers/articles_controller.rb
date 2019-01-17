@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    # collection bus article_params viduje, kadangi sukuriau association
     @article = Article.new(article_params)
     @article.user = current_user
     # json išvedimas
@@ -55,7 +56,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :category_ids => [])
   end
 
   def require_same_user
