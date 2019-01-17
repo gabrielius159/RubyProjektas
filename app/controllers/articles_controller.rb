@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.last
+    @article.user = current_user
     # json išvedimas
     # render plain: params[:article].inspect
     if @article.save
