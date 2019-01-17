@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   # presence username - turi buti ivestas
   # case_sensitivity neleis susikurti username joe ir Joe
   # format patikrins ar email valid
-  #
+
   has_secure_password
 
 end
