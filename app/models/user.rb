@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   # dependent - jei user yra istrinamas, ištrins ir jo articles
 
