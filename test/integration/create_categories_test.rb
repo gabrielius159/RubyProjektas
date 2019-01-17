@@ -1,7 +1,14 @@
 require 'test_helper'
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
+
+  def setup
+
+    @user = User.create(username: "John", email: "gafa@gmail.com", password: "password", admin: true)
+  end
+
   test "get new category form and create category" do
+    sign_in_as(@user, "password")
     get new_category_path
     assert_template 'categories/new'
     # patikrinam ar prideta kadegorija, kaip? Turetu buti kategoriju skaicius padidejes 1
@@ -14,6 +21,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid category submission results in failure" do
+    sign_in_as(@user, "password")
     get new_category_path
     assert_template 'categories/new'
     # turetu nepasikeisti Categoriju skaicius, kadangi neivedam name
