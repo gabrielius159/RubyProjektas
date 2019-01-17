@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :articles
+  has_many :articles, dependent: :destroy
+  # dependent - jei user yra istrinamas, ištrins ir jo articles
 
   before_save { self.email = email.downcase }
   # before_save, padarys kad prieš įkeliant į db, email bus mažosiomis raidėmis

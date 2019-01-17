@@ -1,4 +1,5 @@
-Repozitorija skirta Ruby projektui.
+Repozitorija skirta Blog'ui.
 
-* Ruby projektas mokymosi tikslams
-* Deployed at https://afternoon-plains-74769.herokuapp.com
+
+* Projektui naudota kalba: Ruby (Ruby on Rails).
+* Projektas patalpintas: https://afternoon-plains-74769.herokuapp.com
