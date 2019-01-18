@@ -21,6 +21,16 @@
   <% if @article.categories.any? %>
     <p>
       Categories: <%= render @article.categories %>
+      <!-- Įprastai būtų = render 'categories/category', category: current_element -->
+      <!-- Rails view render'is jei yra duodama objektų kolekcija,
+      jis ieškos partial (_category)
+       su tokiu pačiu vardu kaip objekto klase (Category)
+       (mes perduodam category objektus, kurie priklauso būtent tam @article)
+        ir bandys panaudoti partial renderinant kiekvieną objektą
+        iš kolekcijos.
+         Taip pat ši eilutė automatiškai sukuria category kintamąjį,
+         kurį naudojame partial (_category)
+         -->
     </p>
   <% end %>
 
